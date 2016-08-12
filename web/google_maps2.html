@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+
+      <title>Info windows</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<script>
+ // Initialize Firebase
+ var config = {
+   apiKey: "AIzaSyBj4uirFNsfy_YDLOai-O3rvHM1XwzQ8wk",
+   authDomain: "roadtofreedom-aea63.firebaseapp.com",
+   databaseURL: "https://roadtofreedom-aea63.firebaseio.com",
+   storageBucket: "roadtofreedom-aea63.appspot.com",
+ };
+ firebase.initializeApp(config);
+
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+ var name=document.location.search;
+ name=name.split("=");
+ var newname=name[1];
+
+ console.log(newname)
+ var address="no address"
+ var description="no description"
+ var imageurl="no url"
+ var timestamp="no timestamp"
+ var userobject="hello"
+
+ var ref = new Firebase("https://roadtofreedom-aea63.firebaseio.com/spottings/"+newname);
+// Attach an asynchronous callback to read the data at our posts reference
+ref.on("value", function(snapshot) {
+console.log(snapshot.val())
+  JSON=  snapshot.val();
+    initMap(JSON);
+
+
+
+}, function (errorObject) {
+ console.log("The read failed: " + errorObject.code);
+});
+
+
+
+      function initMap(JSON) {
+          console.log(address)
+        var holon = {lat: JSON.address.lat, lng: JSON.address.lng};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: holon
+        });
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">'+JSON.description+'</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>'+JSON.addressText+'</b> '+
+
+            '</p>'+
+                        '<div id="image"><IMG BORDER="0" ALIGN="Left" height="100" width="150"  SRC='+JSON.imageurl+'></div> '+
+            '<div id="desc"><p>למידע כללי על סוג חיה זו</div> <div id="wiki"><a href="https://en.wikipedia.org/w/index.php?title=dog">'+
+            'https://en.wikipedia.org/w/index.php?title=dog</a> </div>'+
+
+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+
+
+        var marker = new google.maps.Marker({
+          position: holon,
+          map: map,
+          title: JSON.description,
+            icon: image
+        });
+
+          marker.info = new google.maps.InfoWindow({
+              //when I add <IMG BORDER="0" ALIGN="Left" SRC="stagleton.jpg"> the maps will not load
+      content: '<IMG BORDER="0" ALIGN="Left" SRC="https://www.google.com/images/srpr/logo4w.png"> "My name is "'
+
+    });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa4wqQwwjPRcJaC63rKwFQuYe_8YdIJnc&callback=initMap">
+    </script>
+  </body>
+</html>

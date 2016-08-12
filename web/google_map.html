@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 70%;
+      }
+        #picture{
+           height: 30%;
+            width: 40%;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="picture" style="width: 600px; height: 400px"></div>
+    <script>
+
+
+
+
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "https://www.google.com/images/srpr/logo4w.png");
+        elem.setAttribute("height", "768");
+        elem.setAttribute("width", "1024");
+        elem.setAttribute("alt", "Flower");
+        document.getElementById("picture").appendChild(elem);
+
+        var coordInfoWindow = new google.maps.InfoWindow();
+        coordInfoWindow.setContent(createInfoWindowContent(chicago, map.getZoom()));
+        coordInfoWindow.setPosition(chicago);
+        coordInfoWindow.open(map);
+
+
+      var map;
+      function initMap() {
+          var chicago = new google.maps.LatLng(32.024314, 34.775740);
+          map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 32.024314, lng: 34.775740},
+          zoom: 15
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa4wqQwwjPRcJaC63rKwFQuYe_8YdIJnc
+&callback=initMap"
+    async defer></script>
+  </body>
+</html>
