@@ -1,254 +1,331 @@
 <!doctype html>
 <html>
 <head>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-<title></title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <title></title>
     <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-          height: 400px;
-          width: 600px;
-      }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 400px;
+            width: 600px;
+        }
     </style>
 </head>
 <body style="font-family:Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color:#f0f2ea; margin:0; padding:0; color:#333333;">
 
 <table width="100%" bgcolor="#f0f2ea" cellpadding="0" cellspacing="0" border="0">
     <tbody>
-        <tr>
-            <td style="padding:40px 0;">
-                <!-- begin main block -->
-                <table cellpadding="0" cellspacing="0" width="608" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td>
+    <tr>
+        <td style="padding:40px 0;">
+            <!-- begin main block -->
+            <table cellpadding="0" cellspacing="0" width="608" border="0" align="center">
+                <tbody>
+                <tr>
+                    <td>
 
-                                    <img src="http://files.parsetfss.com/00da6fd8-205f-48f9-9641-bf1a19eb8070/tfss-5534cbab-a638-4190-89a2-f673fbc4c61e-image.png" width="600" height="300" alt="Pixelbuddha" style="display:block; border:0; margin:0;">
-                                </a>
+                        <img src="http://files.parsetfss.com/00da6fd8-205f-48f9-9641-bf1a19eb8070/tfss-5534cbab-a638-4190-89a2-f673fbc4c61e-image.png"
+                             width="600" height="300" alt="Pixelbuddha" style="display:block; border:0; margin:0;">
+                        </a>
 
-                                <!-- begin wrapper -->
-                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                    <tbody>
-                                        <tr>
-                                            <td width="8" height="4" colspan="2" style="background:url(http://demo.artlance.ru/email/shadow-top-left.png) no-repeat 100% 100%;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td height="4" style="background:url(http://demo.artlance.ru/email/shadow-top-center.png) repeat-x 0 100%;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td width="8" height="4" colspan="2" style="background:url(http://demo.artlance.ru/email/shadow-top-right.png) no-repeat 0 100%;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-left-top.png) no-repeat 100% 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td colspan="3" rowspan="3" bgcolor="#FFFFFF" style="padding:0 0 30px;">
-                                                <!-- begin content -->
-                                                <div id="map"></div>
-                                                <p style="margin:0 30px 33px;; text-align:center; text-transform:uppercase; font-size:24px; line-height:30px; font-weight:bold; color:#484a42;">
-                                                    את/ה יכול/ה לעזור לו ולשנות את חייו לטוב :)
-                                                </p>
-                                                <!-- begin articles -->
-                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                    <tbody>
-                                                        <tr valign="top">
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                            <td>
-                                                                <a style="display:block; margin:0 0 14px;" href="http://pixelbuddha.net/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Anonymous-AnimalsRights-2011-march01.jpg/300px-Anonymous-AnimalsRights-2011-march01.jpg" width="255" height="150" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
-                                                                <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;"><a href="http://pixelbuddha.net/" style="color:#6c7e44; text-decoration:none;">רוצים לדעת איך לעזור לעוד בעלי חיים?</a></p>
-                                                                <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;">היכנסו לאתר של אנונימוס...</p>
-                                                            </td>
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                            <td>
-                                                                <a style="display:block; margin:0 0 14px;" href="http://pixelbuddha.net/"><img src="http://live-transport.co.il/wp-content/themes/transports/images/live-transports-facebook-share.jpg" width="255" height="150" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
-                                                                <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;"><a href="http://pixelbuddha.net/" style="color:#6c7e44; text-decoration:none;">עוצרים את המשלוחים החיים</a></p>
-                                                                <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;">למידע נוסף</p>
-                                                            </td>
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                        </tr>
-                                                        <tr valign="top">
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                            <td colspan="3">
-                                                                <a style="display:block; margin:0 0 14px;" href="http://pixelbuddha.net/"><img src="http://atlanticsentinel.com/wp-content/uploads/2015/09/Israel-map-600x400.jpg" width="540" height="220" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
-                                                                <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;"><a href="http://pixelbuddha.net/" style="color:#6c7e44; text-decoration:none;">לכל המקרים, יש ללחוץ על התמונה</a></p>
-                                                                <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;"></p>
-                                                            </td>
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <!-- /end articles -->
-                                                <p style="margin:0; border-top:2px solid #e5e5e5; font-size:5px; line-height:5px; margin:0 30px 29px;">&nbsp;</p>
-                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                    <tbody>
-                                                        <tr valign="top">
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                            <td>
-                                                                <p style="margin:0 0 4px; font-weight:bold; color:#333333; font-size:14px; line-height:22px;">Road to Freedom corp.</p>
-                                                                <p style="margin:0; color:#333333; font-size:11px; line-height:18px;">
-                                                                    400005 Russian Federation, Volgograd, prospekt Lenina 56<br>
-                                                                    Help &amp; Support Center: 0000 000 000<br>
-                                                                    Website: <a href="http://pixelbuddha.net/" style="color:#6d7e44; text-decoration:none; font-weight:bold;">www.yourcompany.com</a>
-                                                                </p>
-                                                            </td>
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                            <td width="120">
-                                                                <a href="https://www.facebook.com/pixelbuddha" style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;">
-                                                                    <img src="http://demo.artlance.ru/email/facebook.png" width="24" height="24" alt="facebook" style="display:block; margin:0; border:0; background:#eeeeee;">
-                                                                </a>
-                                                                <a href="https://twitter.com/PixelBuddha" style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;">
-                                                                    <img src="http://demo.artlance.ru/email/twitter.png" width="24" height="24" alt="twitter" style="display:block; margin:0; border:0; background:#eeeeee;">
-                                                                </a>
-                                                                <a href="http://blog.pixelbuddha.net/" style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;;">
-                                                                    <img src="http://demo.artlance.ru/email/tumblr.png" width="24" height="24" alt="tumblr" style="display:block; margin:0; border:0; background:#eeeeee;">
-                                                                </a>
-                                                                <a href="http://pixelbuddha.net/rss" style="float:left; width:24px; height:24px; margin:6px 0 10px 0;">
-                                                                    <img src="http://demo.artlance.ru/email/rss.png" width="24" height="24" alt="rss" style="display:block; margin:0; border:0; background:#eeeeee;">
-                                                                </a>
-                                                                <p style="margin:0; font-weight:bold; clear:both; font-size:12px; line-height:22px;">
-                                                                    <a href="http://pixelbuddha.net/" style="color:#6d7e44; text-decoration:none;">Visit website</a><br>
-                                                                    <a href="http://pixelbuddha.net/" style="color:#6d7e44; text-decoration:none;">Mobile version</a>
-                                                                </p>
-                                                            </td>
-                                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <!-- end content --> 
+                        <!-- begin wrapper -->
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tbody>
+                            <tr>
+                                <td width="8" height="4" colspan="2"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-top-left.png) no-repeat 100% 100%;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-top-center.png) repeat-x 0 100%;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td width="8" height="4" colspan="2"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-top-right.png) no-repeat 0 100%;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                            </tr>
+
+                            <tr>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-left-top.png) no-repeat 100% 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td colspan="3" rowspan="3" bgcolor="#FFFFFF" style="padding:0 0 30px;">
+                                    <!-- begin content -->
+                                    <div id="map"></div>
+                                    <p style="margin:0 30px 33px;; text-align:center; text-transform:uppercase; font-size:24px; line-height:30px; font-weight:bold; color:#484a42;">
+                                        את/ה יכול/ה לעזור לו ולשנות את חייו לטוב :)
+                                    </p>
+                                    <!-- begin articles -->
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tbody>
+                                        <tr valign="top">
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
+                                            <td>
+                                                <a style="display:block; margin:0 0 14px;"
+                                                   href="http://pixelbuddha.net/"><img
+                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Anonymous-AnimalsRights-2011-march01.jpg/300px-Anonymous-AnimalsRights-2011-march01.jpg"
+                                                        width="255" height="150" alt="More"
+                                                        style="display:block; margin:0; border:0; background:#eeeeee;"></a>
+                                                <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;">
+                                                    <a href="http://pixelbuddha.net/"
+                                                       style="color:#6c7e44; text-decoration:none;">רוצים לדעת איך לעזור
+                                                        לעוד בעלי חיים?</a></p>
+                                                <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;">
+                                                    היכנסו לאתר של אנונימוס...</p>
                                             </td>
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-right-top.png) no-repeat 0 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
+                                            <td>
+                                                <a style="display:block; margin:0 0 14px;"
+                                                   href="http://pixelbuddha.net/"><img
+                                                        src="http://live-transport.co.il/wp-content/themes/transports/images/live-transports-facebook-share.jpg"
+                                                        width="255" height="150" alt="More"
+                                                        style="display:block; margin:0; border:0; background:#eeeeee;"></a>
+                                                <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;">
+                                                    <a href="http://pixelbuddha.net/"
+                                                       style="color:#6c7e44; text-decoration:none;">עוצרים את המשלוחים
+                                                        החיים</a></p>
+                                                <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;">
+                                                    למידע נוסף</p>
+                                            </td>
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
                                         </tr>
-                                        
-                                        
-                                        <tr>
-                                            <td width="4" style="background:url(http://demo.artlance.ru/email/shadow-left-center.png) repeat-y 100% 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td width="4" style="background:url(http://demo.artlance.ru/email/shadow-right-center.png) repeat-y 0 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                        <tr valign="top">
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
+                                            <td colspan="3">
+                                                <a style="display:block; margin:0 0 14px;"
+                                                   href="http://pixelbuddha.net/"><img
+                                                        src="http://atlanticsentinel.com/wp-content/uploads/2015/09/Israel-map-600x400.jpg"
+                                                        width="540" height="220" alt="More"
+                                                        style="display:block; margin:0; border:0; background:#eeeeee;"></a>
+                                                <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;">
+                                                    <a href="http://pixelbuddha.net/"
+                                                       style="color:#6c7e44; text-decoration:none;">לכל המקרים, יש ללחוץ
+                                                        על התמונה</a></p>
+                                                <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;"></p>
+                                            </td>
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
                                         </tr>
-                                        
-                                        <tr> 
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-left-bottom.png) repeat-y 100% 100%;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-right-bottom.png) repeat-y 0 100%;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                        </tbody>
+                                    </table>
+                                    <!-- /end articles -->
+                                    <p style="margin:0; border-top:2px solid #e5e5e5; font-size:5px; line-height:5px; margin:0 30px 29px;">
+                                        &nbsp;</p>
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tbody>
+                                        <tr valign="top">
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
+                                            <td>
+                                                <p style="margin:0 0 4px; font-weight:bold; color:#333333; font-size:14px; line-height:22px;">
+                                                    Road to Freedom corp.</p>
+                                                <p style="margin:0; color:#333333; font-size:11px; line-height:18px;">
+                                                    400005 Russian Federation, Volgograd, prospekt Lenina 56<br>
+                                                    Help &amp; Support Center: 0000 000 000<br>
+                                                    Website: <a href="http://pixelbuddha.net/"
+                                                                style="color:#6d7e44; text-decoration:none; font-weight:bold;">www.yourcompany.com</a>
+                                                </p>
+                                            </td>
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
+                                            <td width="120">
+                                                <a href="https://www.facebook.com/pixelbuddha"
+                                                   style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;">
+                                                    <img src="http://demo.artlance.ru/email/facebook.png" width="24"
+                                                         height="24" alt="facebook"
+                                                         style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                </a>
+                                                <a href="https://twitter.com/PixelBuddha"
+                                                   style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;">
+                                                    <img src="http://demo.artlance.ru/email/twitter.png" width="24"
+                                                         height="24" alt="twitter"
+                                                         style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                </a>
+                                                <a href="http://blog.pixelbuddha.net/"
+                                                   style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;;">
+                                                    <img src="http://demo.artlance.ru/email/tumblr.png" width="24"
+                                                         height="24" alt="tumblr"
+                                                         style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                </a>
+                                                <a href="http://pixelbuddha.net/rss"
+                                                   style="float:left; width:24px; height:24px; margin:6px 0 10px 0;">
+                                                    <img src="http://demo.artlance.ru/email/rss.png" width="24"
+                                                         height="24" alt="rss"
+                                                         style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                </a>
+                                                <p style="margin:0; font-weight:bold; clear:both; font-size:12px; line-height:22px;">
+                                                    <a href="http://pixelbuddha.net/"
+                                                       style="color:#6d7e44; text-decoration:none;">Visit
+                                                        website</a><br>
+                                                    <a href="http://pixelbuddha.net/"
+                                                       style="color:#6d7e44; text-decoration:none;">Mobile version</a>
+                                                </p>
+                                            </td>
+                                            <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">
+                                                &nbsp;</p></td>
                                         </tr>
-                                 
-                                        <tr>
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-bottom-corner-left.png) no-repeat 100% 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-bottom-left.png) no-repeat 100% 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td height="4" style="background:url(http://demo.artlance.ru/email/shadow-bottom-center.png) repeat-x 0 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-bottom-right.png) no-repeat 0 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                            <td width="4" height="4" style="background:url(http://demo.artlance.ru/email/shadow-bottom-corner-right.png) no-repeat 0 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <!-- end wrapper-->
-                                <p style="margin:0; padding:34px 0 0; text-align:center; font-size:11px; line-height:13px; color:#333333;">
-                                    Don‘t want to recieve further emails? You can unsibscribe <a href="http://pixelbuddha.net/" style="color:#333333; text-decoration:underline;">here</a>
-                                </p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- end main block -->
-            </td>
-        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- end content -->
+                                </td>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-right-top.png) no-repeat 0 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-left-center.png) repeat-y 100% 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td width="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-right-center.png) repeat-y 0 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                            </tr>
+
+                            <tr>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-left-bottom.png) repeat-y 100% 100%;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-right-bottom.png) repeat-y 0 100%;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                            </tr>
+
+                            <tr>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-bottom-corner-left.png) no-repeat 100% 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-bottom-left.png) no-repeat 100% 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-bottom-center.png) repeat-x 0 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-bottom-right.png) no-repeat 0 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                                <td width="4" height="4"
+                                    style="background:url(http://demo.artlance.ru/email/shadow-bottom-corner-right.png) no-repeat 0 0;">
+                                    <p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- end wrapper-->
+                        <p style="margin:0; padding:34px 0 0; text-align:center; font-size:11px; line-height:13px; color:#333333;">
+                            Don‘t want to recieve further emails? You can unsibscribe <a href="http://pixelbuddha.net/"
+                                                                                         style="color:#333333; text-decoration:underline;">here</a>
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- end main block -->
+        </td>
+    </tr>
     </tbody>
 </table>
 
 
-<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<script src="//www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 <script>
- // Initialize Firebase
- var config = {
-   apiKey: "AIzaSyBj4uirFNsfy_YDLOai-O3rvHM1XwzQ8wk",
-   authDomain: "roadtofreedom-aea63.firebaseapp.com",
-   databaseURL: "https://roadtofreedom-aea63.firebaseio.com",
-   storageBucket: "roadtofreedom-aea63.appspot.com",
- };
- firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBj4uirFNsfy_YDLOai-O3rvHM1XwzQ8wk",
+        authDomain: "roadtofreedom-aea63.firebaseapp.com",
+        databaseURL: "https://roadtofreedom-aea63.firebaseio.com",
+        storageBucket: "roadtofreedom-aea63.appspot.com",
+    };
+    firebase.initializeApp(config);
 
 
-      // This example displays a marker at the center of Australia.
-      // When the user clicks the marker, an info window opens.
- var name=document.location.search;
- name=name.split("=");
- var newname=name[1];
+    // This example displays a marker at the center of Australia.
+    // When the user clicks the marker, an info window opens.
+    var name = document.location.search;
+    name = name.split("=");
+    var newname = name[1];
 
- console.log(newname)
- var address="no address"
- var description="no description"
- var imageurl="no url"
- var timestamp="no timestamp"
- var userobject="hello"
+    console.log(newname)
+    var address = "no address"
+    var description = "no description"
+    var imageurl = "no url"
+    var timestamp = "no timestamp"
+    var userobject = "hello"
 
- var ref = new Firebase("https://roadtofreedom-aea63.firebaseio.com/spottings/"+newname);
-// Attach an asynchronous callback to read the data at our posts reference
-ref.on("value", function(snapshot) {
-console.log(snapshot.val())
-  JSON=  snapshot.val();
-    initMap(JSON);
-
-
-
-}, function (errorObject) {
- console.log("The read failed: " + errorObject.code);
-});
+    var database = firebase.database();
+    var ref = database.ref('spottings');
+    // Attach an asynchronous callback to read the data at our posts reference
+    ref.on("value", function (snapshot) {
+        console.log(snapshot.val())
+        var JSON = snapshot.val();
+        initMap(JSON[0]);
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
 
 
-
-      function initMap(JSON) {
-          console.log(address)
+    function initMap(JSON) {
+        console.log(address)
         var holon = {lat: JSON.address.lat, lng: JSON.address.lng};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: holon
+            zoom: 15,
+            center: holon
         });
 
-        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">'+JSON.description+'</h1>'+
-            '<div id="bodyContent">'+
-            '<p><b>'+JSON.addressText+'</b> '+
+        var contentString = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>' +
+                '<h1 id="firstHeading" class="firstHeading">' + JSON.description + '</h1>' +
+                '<div id="bodyContent">' +
+                '<p><b>' + JSON.addressText + '</b> ' +
 
-            '</p>'+
-                        '<div id="image"><IMG BORDER="0" ALIGN="Left" height="100" width="150"  SRC='+JSON.imageurl+'></div> '+
-            '<div id="desc"><p>למידע כללי על סוג חיה זו</div> <div id="wiki"><a href="https://en.wikipedia.org/w/index.php?title=dog">'+
-            'https://en.wikipedia.org/w/index.php?title=dog</a> </div>'+
+                '</p>' +
+                '<div id="image"><IMG BORDER="0" ALIGN="Left" height="100" width="150"  SRC=' + JSON.imageurl + '></div> ' +
+                '<div id="desc"><p>למידע כללי על סוג חיה זו</div> <div id="wiki"><a href="https://en.wikipedia.org/w/index.php?title=dog">' +
+                'https://en.wikipedia.org/w/index.php?title=dog</a> </div>' +
 
 
-            '</div>'+
-            '</div>';
+                '</div>' +
+                '</div>';
 
         var infowindow = new google.maps.InfoWindow({
-          content: contentString
+            content: contentString
         });
 
-          var image = 'https://cdn4.iconfinder.com/data/icons/maps-and-navigation-solid-icons-vol-1/72/08-512.png';
+        var image = 'https://cdn4.iconfinder.com/data/icons/maps-and-navigation-solid-icons-vol-1/72/08-512.png';
 
 
         var marker = new google.maps.Marker({
-          position: holon,
-          map: map,
-          title: JSON.description
+            position: holon,
+            map: map,
+            icon: 'pin.png',
+            title: JSON.description
 
 
         });
 
-          marker.info = new google.maps.InfoWindow({
-              //when I add <IMG BORDER="0" ALIGN="Left" SRC="stagleton.jpg"> the maps will not load
-      content: '<IMG BORDER="0" ALIGN="Left" SRC="https://www.google.com/images/srpr/logo4w.png"> "My name is "'
+        marker.info = new google.maps.InfoWindow({
+            //when I add <IMG BORDER="0" ALIGN="Left" SRC="stagleton.jpg"> the maps will not load
+            content: '<IMG BORDER="0" ALIGN="Left" SRC="https://www.google.com/images/srpr/logo4w.png"> "My name is "'
 
-    });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
         });
-      }
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
 
 
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa4wqQwwjPRcJaC63rKwFQuYe_8YdIJnc&callback=initMap">
-    </script>
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa4wqQwwjPRcJaC63rKwFQuYe_8YdIJnc&callback=initMap">
+</script>
 </body>
 </html>
