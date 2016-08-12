@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_3a59c448df6e0aa6286d57abf5365c2265d0f270.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_53c1a2e3da46c9849638af03a7399e2d947cca2e.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-0.11.0_22ccb2798b7574a6284e6ec9954f0b9acc1c0a27.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_440ec947e0fa8333cac6f2b4a692642d9da90dea.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/animalGo/react-native-image-picker/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8c1794bdf25d23cff2235cf87d5093dc15112a8e">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/animalGo-react-native-image-picker-unspecified_62dde59beda5d415a67130b8baf0e37268a9bd9e.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.1_c74eaffb5bda13f311e89f37eb80456c381a77c3.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.31.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8505ca79a0abc3ef116f9c197b7d721ee2453066">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.31.0_b454b9038f5bfd60ad0d3692560ac2b8164049e2.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.3/1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14/jackson-core-2.2.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.3_968d8bc914355f452a3a2ee6de667fef0c649e95.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-0.11.0_9101c818832d1957645d25d63c0022e3d732da16.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_6baaf2ca4a843f5c237366156a5ebdd23bb5a152.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_fd0966a176b7820060735e2c5079ea8022df4c27.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-0.11.0_1476c3e218075f9ff59303923fb0ed92d35ad486.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_d75870f7beb67dc88fa1e127b6eb82346f03d0ce.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_80bda16a40ffc205a97918b64f04894e8e4ca6a1.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.31.0/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="841543b0cb82ebcb59e60c73c4514afa57888ca0">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5_4793bd9f82e1b3d9c8aade80ed9eed244746451e.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_7dbd5938c83254492ac814b1ee0c391b7f10bde7.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.0.1_abb0b39239d13faeed8cffa9f3dd48a49337b679.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-0.11.0_f654df3d916e9527daf0c9eef00d283a6b0d4a3f.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-0.11.0_98b4fd1b568b3adc08733a2f010c5224444e3c7c.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_b19f62871518b4f9c3c7f2db7586f53ecf403136.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_f543243f9a4e40ec093827a42e29adf4e0ef5c8b.jar" />
+    </item>
+    <item
+        jar="/Users/dht/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/library-2.4.0_b271f8ecb92e8e14b67c453613f2e26fc1bf7958.jar" />
+    </item>
+    <item
+        jar="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="/Users/dht/Projects/play/animalGo/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-0.11.0_f992e872f65888e26ee1700d6b51ec5ad7ae1cd3.jar" />
+    </item>
+
+</items>
