@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "yoga"
+    },
+    "yoga": {
+      "applicationId": "8yY9IFBK4fjyBrxQ1Y4gQ41NZTmMSoQPwHOv1t2n"
+    }
+  }
+}
