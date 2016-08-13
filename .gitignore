@@ -1,5 +1,4 @@
 node_modules
-.idea/encodings.xml
-.idea/vcs.xml
 presentation/
 .idea
+.DS_Store
