@@ -22,6 +22,7 @@ import FCM from 'react-native-fcm';
 import * as firebase from 'firebase';
 
 var ImagePicker = require('react-native-image-picker');
+import Spinner from 'react-native-loading-spinner-overlay';
 
 let animals = [];
 animals[0] = require('./images/animal1.png');
@@ -39,7 +40,8 @@ class animalGo extends Component {
 		this.state = {
 			fadeAnim: new Animated.Value(0),
 			stage: 'LOADING',
-			animal: animals[0]
+			animal: animals[0],
+			progress: false,
 		}
 	}
 
@@ -133,7 +135,8 @@ class animalGo extends Component {
 				// You can display the image using either data...
 				const source = {uri: 'data:image/jpeg;base64,' + response.data, isStatic: true};
 				this.setState({
-					stage: 'POST'
+					stage: 'POST',
+					progress: false,
 				});
 
 				// or a reference to the platform specific asset location
@@ -153,6 +156,17 @@ class animalGo extends Component {
 	}
 
 	reportIncident() {
+
+		this.setState({
+			progress: true
+		});
+
+
+		setTimeout(() => {
+			this.setState({
+				stage: 'SUCCESS'
+			});
+		}, 3500);
 
 	}
 
@@ -179,8 +193,10 @@ class animalGo extends Component {
 		return (
 			<Image source={require('./images/bk.jpg')} style={styles.mainContainer}>
 
+				<Spinner visible={this.state.progress} />
+
 				<Text style={styles.titleText1}>
-					דיווח על בעל חיים
+					דיווח חי מהשטח
 				</Text>
 
 				<Text style={styles.titleText2}>
@@ -247,6 +263,34 @@ class animalGo extends Component {
 		</Image>);
 
 	}
+
+	renderSuccess() {
+		return (	<Image source={require('./images/bk.jpg')} style={styles.mainContainer}>
+
+
+				<Text style={styles.titleText10}>
+					הדיווח התקבל בהצלחה!
+				</Text>
+
+				<Text style={styles.titleText2}>
+					מקרה #1490
+				</Text>
+
+
+				<Image source={require('./images/winner.png')} style={styles.logo2} />
+
+				<Text style={ styles.address } >
+					דורון זכית ב- 10 נקודות
+				</Text>
+				<Text style={ styles.address2 } >
+					יש לך סה״כ 124 נקודות (מקום שני)
+				</Text>
+
+
+
+
+			</Image>);
+	}
 	render() {
 
 		switch (this.state.stage) {
@@ -256,6 +300,8 @@ class animalGo extends Component {
 				return this.renderMain();
 			case 'POST':
 				return this.renderPrepostForm();
+			case 'SUCCESS':
+				return this.renderSuccess();
 			default:
 				return this.renderLoading();
 		}
@@ -292,6 +338,12 @@ const styles = StyleSheet.create({
 		color: '#ffffff',
 		fontSize: 20,
 		textAlign:'center',
+	},	titleText10: {
+		alignSelf: 'center',
+		color: '#ffffff',
+		fontSize: 30,
+		textAlign:'center',
+		marginTop:100,
 	},
 	titleBig: {
 		fontSize: 30,
@@ -357,6 +409,12 @@ const styles = StyleSheet.create({
 		margin:20,
 		width:300,
 		height:150,
+		resizeMode:'contain',
+	},
+	logo2: {
+		margin:20,
+		width:300,
+		height:250,
 		resizeMode:'contain',
 	},
 	address: {
