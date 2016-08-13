@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "767396420319",
+    "firebase_url": "https://roadtofreedom-aea63.firebaseio.com",
+    "project_id": "roadtofreedom-aea63",
+    "storage_bucket": "roadtofreedom-aea63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767396420319:android:06155d3a82f15536",
+        "android_client_info": {
+          "package_name": "com.animalgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767396420319-7h69lp8rsjvn4m2kcr54cl48ots3s6i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFC49jgm-EnQhCkN75job9AhPYjX1Mfuw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
