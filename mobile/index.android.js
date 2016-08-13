@@ -1,68 +1,75 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+* Sample React Native App
+* https://github.com/facebook/react-native
+* @flow
+*/
 
-import React, { Component, Animated } from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
+  TextInput,
   View,
-  Image,
   Platform,
+  Image,
   TouchableHighlight
 } from 'react-native';
 
+import FCM from 'react-native-fcm';
+
+// const firebase = require("firebase");
+
 var ImagePicker = require('react-native-image-picker');
+
+// Initialize Firebase
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBj4uirFNsfy_YDLOai-O3rvHM1XwzQ8wk",
+//   authDomain: "roadtofreedom-aea63.firebaseapp.com",
+//   databaseURL: "https://roadtofreedom-aea63.firebaseio.com",
+//   storageBucket: "roadtofreedom-aea63.appspot.com",
+// };
+
+// firebase.initializeApp(firebaseConfig);
+// const rootRef = firebase.database().ref();
+// const itemsRef = rootRef.child('spottings');
+
 
 class animalGo extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-    };
+    }
   }
 
   componentDidMount() {
-                            // Start the animation
+    FCM.requestPermissions(); // for iOS
+    FCM.getFCMToken().then(token => {
+      console.log(token)
+      // store fcm token in your server
+    });
+    this.notificationUnsubscribe = FCM.on('notification', (notif) => {
+      // there are two parts of notif. notif.notification contains the notification payload, notif.data contains data payload
+    });
+    this.refreshUnsubscribe = FCM.on('refreshToken', (token) => {
+      console.log(token)
+      // fcm token may not be available on first load, catch it here
+    });
+
+    FCM.subscribeToTopic('/topics/foo-bar');
+    FCM.unsubscribeFromTopic('/topics/foo-bar');
   }
 
-
-  renderLoading() {
-    return (
-        <Image source={require('./images/splash.jpg')} style={styles.container}>
-
-
-          <MyButton color="blue">
-            </MyButton>
-
-          <View style={styles.loader}>
-            <Animated.Image                         // Base: Image, Text, View
-                source={{uri: 'http://i.imgur.com/XMKOH81.jpg'}}
-                style={{
-          flex: 1,
-          transform: [                        // `transform` is an ordered array
-            {scale: this.state.bounceValue},  // Map `bounceValue` to `scale`
-          ]
-        }}
-            />
-          <Image  source={require('./images/animal1.png')} style={styles.animal}>
-          </Image>
-            </View>
-
-        </Image>);
+  componentWillUnmount() {
+    // prevent leaking
+    this.refreshUnsubscribe();
+    this.notificationUnsubscribe();
   }
 
   showImagePicker() {
 
     var options = {
-      title: 'דווח מיקום',
-      customButtons: {
-
-      },
       storageOptions: {
         skipBackup: true,
         path: 'images'
@@ -101,30 +108,44 @@ class animalGo extends Component {
     });
   }
 
+  reportIncident() {
+
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React SOS!
+      <View style={styles.mainContainer}>
+
+      <Text style={styles.titleText}>
+       דווח על בעל חיים בסכנה
+      </Text>
+
+
+        <Text style={styles.titleLabel}>
+          תיאור:
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+
+        <TextInput
+        style={styles.textEdit}
+        onChangeText={(text) => this.setState({text})}
+        placeholder="תיאור"
+        />
 
         <TouchableHighlight
         style={styles.button}
         onPress={this.showImagePicker.bind(this)}>
-        <View>
-          <Text style={styles.buttonText}>Button!</Text>
-        </View>
-      </TouchableHighlight>
+          <View>
+            <Text style={styles.buttonText}>הוסף תמונה</Text>
+          </View>
+        </TouchableHighlight>
 
-      <Image source={this.state.avatarSource} style={styles.uploadAvatar} />
-
+        <TouchableHighlight
+        style={styles.button}
+        onPress={this.reportIncident.bind(this)}>
+          <View>
+            <Text style={styles.buttonSend}>שלח דיווח</Text>
+          </View>
+        </TouchableHighlight>
 
       </View>
     );
@@ -132,51 +153,44 @@ class animalGo extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      width: null,
-      height: null,
-      flexDirection: 'column',
-      justifyContent: 'flex-end',
-      alignItems:'stretch',
-      resizeMode: 'cover',
-
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#e71d32',
   },
-  loader: {
-      alignItems:'center',
-    margin:30,
-  },
-  animal: {
-      width:100,
-    height:100,
-    transform: [
-      {scale: 1},
-    ]
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+  titleText:{
+    alignSelf: 'center',
+    color: '#ffffff',
+    fontSize: 30,
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  titleLabel:{
+    color: '#ffffff',
+    fontSize: 24,
   },
   button: {
-    backgroundColor: 'red',
+    backgroundColor: '#0d1111',
   },
   buttonText: {
     fontSize: 30,
+    color: '#ffffff',
+  },
+  buttonSend: {
+    fontSize: 30,
+    color: '#ffffff',
   },
   uploadAvatar: {
     width: 100,
     height: 100,
     resizeMode: 'contain',
+  },
+  textEdit: {
+    alignSelf: 'stretch',
+    color: '#ffffff',
+    height: 40,
+    borderColor: 'grey',
+    backgroundColor: 'white',
+    borderWidth: 1,
   }
 });
 
 AppRegistry.registerComponent('animalGo', () => animalGo);
-
-
-
