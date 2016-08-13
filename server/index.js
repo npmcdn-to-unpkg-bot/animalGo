@@ -13,26 +13,46 @@ firebase.initializeApp(config);
 
 var serverStart = new Date();
 
-
+console.log("starting...");
 var spottingsRef = firebase.database().ref('spottings');
+console.log("got spottings from DB");
 var usersRef = firebase.database().ref('users');
+console.log("got users from DB");
+var spottingsusersRef=firebase.database().ref('spottingsusers');
 spottingsRef.on('child_added', function(data) {
-
+	console.log("event spottings changed");
         var now = new Date();
         var delta = now - serverStart;
-
-		if (delta > 2000) {
+	console.log("delta is "+ delta);
+		//if (delta > 2000) {
 				console.log('val -> ', data.val());
-		}
+	findCloseUsers(data.val()["address"],data.index)
+		//}
 });// listening to changes
 
-function findCloseUsers(location) {
+function findCloseUsers(location,spottingid) {
     usersRef.once("value", function (snapshot) {
         var users = snapshot.val();
         Object.keys(users).forEach(function (userId) {
             var user = users[userId];
             console.log(user);
+          console.log(user["lastlocation"]["lat"]);
+            console.log(user["lastlocation"]["lng"]);
+			console.log(location["lat"]);
+           var distance=( Math.sqrt(
 
+           Math.abs(Math.pow(2,user["lastlocation"]["lat"]-location["lat"])+
+			   Math.pow(2,user["lastlocation"]["lng"]-location["lng"]))));
+			console.log("distance is " + distance);
+			if (distance<2)
+			{
+				spottingsusersRef.push({ "userid":user["id"], "spottingid":1});
+			//	var notificationData = snapshot.val();
+			//	sendNotification(notificationData);
+			//	snapshot.ref().remove;
+
+			}
+		//
         });
     });
 }
@@ -46,7 +66,7 @@ function newSpotting() {
 }
 
 setTimeout(function () {
-    newSpotting();
+  //  newSpotting();
 }, 3000);
 
 function writeSpotting(userId, name, email, imageUrl) {
