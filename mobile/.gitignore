@@ -4,7 +4,7 @@
 
 # Xcode
 #
-build/
+mobile/android/build
 *.pbxuser
 !default.pbxuser
 *.mode1v3
